@@ -1,10 +1,10 @@
 'use strict';
 
 (() => {
-  var logSomething = (something = 'default message') => {
-    console.log(something);
+  var logSomething = (something = 'default message', somethingElse = `${something} with concatenation`) => {
+    console.log(something, somethingElse);
   }
 
   logSomething();
-  logSomething('not default');
+  logSomething(undefined, 'and overriding');
 })()

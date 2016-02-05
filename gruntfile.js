@@ -1,4 +1,4 @@
-module.exports = () => {
+module.exports = (grunt) => {
   grunt.initConfig({
     babel: {
       options: {
@@ -12,6 +12,6 @@ module.exports = () => {
     }
   });
 
-  grunt.loadNpmTask('grunt-babel');
+  grunt.loadNpmTasks('grunt-babel');
   grunt.registerTask('es6', ['babel']);
 };

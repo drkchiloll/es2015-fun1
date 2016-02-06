@@ -23,4 +23,29 @@
   }
   // Any Number of ARGs will Work
   joinStuff('Stuffs', 'to', 'join');
+  console.log();
+  console.log('Template Strings');
+  // Template Strings
+  // Line Breaks are Legel
+  var template = `this is a template
+string!`;
+  console.log(template);
+
+  // Interpolation using ${string} Tokens
+  let a = '5',
+      b = 'something';
+  console.log(`a is ${a}, while b is ${b} else`);
+
+  var reverseString = (string) => string.split('').reverse().join('');
+  console.log(`a is ${a}, while b is ${b} else, and ${reverseString(b)} is reversed`);
+
+  // Tagged Template Strings
+  var str = (literals, ...values) => {
+    // console.log(literals);
+    // console.log(values);
+    return values[2] + literals[3] + literals[2] + values[1] + literals[1] + values[0] + literals[0];
+  };
+
+  console.log(str`a is ${a}, while b is ${b} else, and ${reverseString(b)} is reversed`);
+
 })()

@@ -2,15 +2,17 @@
   "name": "es6",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "es6.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "author": "Sam Womack",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-loader": "^6.2.1",
     "babel-preset-es2015": "^6.3.13",
-    "grunt": "^0.4.5",
-    "grunt-babel": "^6.0.0"
+    "webpack": "^1.12.12"
   }
 }

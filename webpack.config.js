@@ -6,7 +6,7 @@ const PATHS = {
 };
 
 module.exports = {
-  entry: PATHS.app + '/es6.js',
+  entry: PATHS.app + '/es6Classes.js',
   resolve: {
     extensions: ['', '.js']
   },

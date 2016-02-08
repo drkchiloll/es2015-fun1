@@ -81,4 +81,41 @@ string!`;
   let squareGenerator = square(5);
   console.log(squareGenerator.next());
   console.log(squareGenerator.next(10));
+
+  // PROMISES
+  var myPromise = new Promise((resolve, reject) => {
+    (Math.random() < .5) ? resolve('success') : reject('failure');
+  });
+
+  myPromise.then((resp) => {
+    console.log('The promise was resolved');
+    return true;
+  }).catch((err) => {
+    console.log('The Promise was rejected');
+    return false;
+  }).then((val) => {
+    console.log(val);
+  });
+
+  var getNumberFact = (url) => {
+    return new Promise((resolve, reject) => {
+      var request = new XMLHttpRequest();
+
+      request.onreadystatechange = function(e) {
+        if(this.readyState === 4) {
+          if(this.status === 200) {
+            resolve(this.response);
+          } else {
+            reject(this.statusText);
+          }
+        }
+      }
+      request.open('GET', url, true);
+      request.send();
+    });
+  }
+
+  getNumberFact('http://numbersapi.com/random').then(response => {
+    console.log(response);
+  }).catch(err => console.log(err));
 })()

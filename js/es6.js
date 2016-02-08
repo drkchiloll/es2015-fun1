@@ -48,4 +48,28 @@ string!`;
 
   console.log(str`a is ${a}, while b is ${b} else, and ${reverseString(b)} is reversed`);
 
+
+  // Arrow Functions ()'s and return optional'
+  var fn = (param1) => {
+    var square = param1 * param1;
+    return square;
+  };
+  console.log(fn(3));
+
+  // THIS
+  let user = {
+    name: 'someone'
+  };
+  function getUserName() {
+    return this.name;
+  }
+  console.log(getUserName.call(user));
+
+  // CANNOT USE ARROW FUNCTIONS AS CONSTRUCTORS BECAUSE OF THIS
+  var getUserArrow = () => {
+    return this.name;
+  };
+  console.log(getUserArrow.call(user));
+
+  
 })()

@@ -69,7 +69,16 @@ string!`;
   var getUserArrow = () => {
     return this.name;
   };
-  console.log(getUserArrow.call(user));
+  // console.log(getUserArrow.call(user));
 
-  
+  // GENERATORS
+  function* square(x) {
+    var y = (yield x * x) * x;
+    console.log('x was', x);
+    console.log('y was', y);
+  }
+  // Invoke the Generator to get an Iterator
+  let squareGenerator = square(5);
+  console.log(squareGenerator.next());
+  console.log(squareGenerator.next(10));
 })()
